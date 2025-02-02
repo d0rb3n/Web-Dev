@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            height: 700px;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1000px;
+            align-items: center;
+        }
+        .text-box {
+            width: 50%;
+            text-align: left;
+        }
+        .text-box h1 {
+            color: #0f66d8;
+            font-size: 60px;
+        }
+        .text-box p {
+            font-size: 28px;
+            color: black;
+        }
+        .login-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow:0 0 90px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #0d5bc1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-btn:hover {
+            background-color: #0d4da0;
+        }
+        .signup-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #26a00e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .signup-btn:hover {
+            background-color: #1e8809;
+        }
+
+        .passforget{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-box">
+            <h1>facebook</h1>
+            <p>Facebook помогает вам всегда оставаться на связи и общаться со своими знакомыми.</p>
+        </div>
+        <div class="login-box">
+            <input type="text" placeholder="Электронный адрес или номер телефона">
+            <input type="password" placeholder="Пароль">
+            <button class="login-btn">Вход</button>
+            <p class = "passforget"><a href="#" style="color: #1877f2;">Забыли пароль?</a></p>
+            <hr>
+            <button class="signup-btn">Создать аккаунт</button>
+        </div>
+    </div>
+</body>
+</html>
