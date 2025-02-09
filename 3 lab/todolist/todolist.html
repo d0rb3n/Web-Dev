@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .header {
+            width: 100%;
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .container {
+            width: 50%;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 5px;
+            background: #fff;
+        }
+        .delete {
+            width:20px;
+            cursor: pointer;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .task-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">To-Do List</div>
+    <div class="container">
+        <h2>To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="New Task">
+        <button onclick="addTask()">Add</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const taskText = taskInput.value.trim();
+            if (taskText === "") return;
+            
+            const li = document.createElement("li");
+            li.innerHTML = `<div class="task-content"><input type="checkbox" onclick="toggleTask(this)"> <span class="task-text">${taskText}</span></div> <img src="delete.png" class="delete" onclick="removeTask(this)" alt="Delete">`;
+            document.getElementById("taskList").appendChild(li);
+            taskInput.value = "";
+        }
+
+        function removeTask(element) {
+            element.parentElement.remove();
+        }
+
+        function toggleTask(checkbox) {
+            const taskText = checkbox.nextElementSibling;
+            taskText.classList.toggle("completed", checkbox.checked);
+        }
+    </script>
+</body>
+</html>
