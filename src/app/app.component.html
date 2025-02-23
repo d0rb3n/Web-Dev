@@ -1,0 +1,18 @@
+<h1>Онлайн магазин</h1>
+
+<div>
+  <h2>Категории</h2>
+  <ul>
+    <li *ngFor="let category of categories">
+      <button (click)="selectCategory(category)">
+        <img [src]="category.image" [alt]="category.name" class="category-image">
+        {{ category.name }}
+      </button>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedCategory">
+  <h2>{{ selectedCategory.name }}</h2>
+  <app-product-list [products]="selectedCategory.products ?? []"></app-product-list>
+</div>
