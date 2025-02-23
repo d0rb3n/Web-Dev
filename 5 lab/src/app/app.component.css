@@ -1,0 +1,55 @@
+/* app.component.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    background-color:  rgb(255, 0, 0);
+    color:white;
+    text-align: center;
+    font-size: 3em;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+li {
+    display: inline-block;
+}
+
+.category-image {
+    width: 150px;
+    height: 140px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+
+button {
+    background-color: rgb(234, 33, 33);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #ee394e;
+}
+
